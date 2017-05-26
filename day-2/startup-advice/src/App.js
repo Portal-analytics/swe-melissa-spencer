@@ -1,21 +1,7 @@
 
-var React = require('react');
-var AppBar = require('material-ui/AppBar');
-var MuiThemeProvider = require('material-ui/styles/MuiThemeProvider');
-/*
-function AppBarExampleIcon() {
-	return (
-		<AppBar
-		title="Great Fucking Startup Advice"
-		iconClassNameRight="muidocs-icon-navigation-expand-more"
-	/>
-	)
-}
-*/
-
-// const AppBarExampleIcon = () => (
-// );
-
+import React from 'react';
+import AppBar from 'material-ui/AppBar';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class App extends React.Component {
 	state = {
@@ -52,12 +38,12 @@ class App extends React.Component {
 									className='button'
 									onClick={(e) => this.nextQuote(e)}>
 									In Order
-						</button>
+								</button>
 								<button
 									className='button'
 									onClick={(e) => this.randomQuote(advice, e)}>
 									Random
-						</button>
+								</button>
 							</div>
 						</div>
 						<img className='image'
@@ -73,4 +59,4 @@ class App extends React.Component {
 	}
 }
 
-module.exports = App;
+export default App;
