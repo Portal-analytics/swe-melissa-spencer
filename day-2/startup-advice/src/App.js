@@ -3,6 +3,13 @@ import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
+const AppBarExampleIcon = () => (
+  <AppBar
+    title="Great Fucking Advice"
+    iconClassNameRight="muidocs-icon-navigation-expand-more"
+  />
+);
+
 class App extends React.Component {
 	state = {
 		clicks: 0,
@@ -28,6 +35,8 @@ class App extends React.Component {
 		return (
 			<MuiThemeProvider>
 				<div>
+				<AppBarExampleIcon></AppBarExampleIcon>
+				<div className='program'>
 					<div className='container'>
 						<div>
 							<h1 className='quote'>
@@ -47,12 +56,13 @@ class App extends React.Component {
 							</div>
 						</div>
 						<img className='image'
-							src="https://sites.psu.edu/behindthememes/files/2016/09/maxresdefault-1iulwsz.jpg"
+							src="https://s-media-cache-ak0.pinimg.com/736x/7d/95/94/7d95944b2401deeaa6143620d6499443.jpg"
 							alt="Just Do It" />
 					</div>
 					<h2 className='clicks'>
 						You have completed {this.state.clicks} clicks!
 				</h2>
+				</div>
 				</div>
 			</MuiThemeProvider>
 		)
