@@ -44,7 +44,10 @@ class App extends React.Component {
 	render() {
 		const advice = ['Fake it till you make it', 'Hire Spencer', 'Watch Silicon Valley', 'Hire Melissa', 'Read up on Bernie Madoff', 'Take a leap'];
 		return (
+			
 			<MuiThemeProvider>
+				<div>
+				{this.state.clicks < 10 &&
 				<div>
 				<AppBarExampleIcon></AppBarExampleIcon>
 				<div className='program'>
@@ -74,8 +77,21 @@ class App extends React.Component {
 						You have completed {this.state.clicks} clicks!
 				</h2>
 				</div>
+				
+				</div>
+				}
+				{this.state.clicks >= 10 &&
+				<div>
+					 <img
+					 	className="surprise"
+						alt="surprise"
+						src="https://i.ytimg.com/vi/4rEikKJKfos/maxresdefault.jpg"
+					 />
+				</div>
+				}
 				</div>
 			</MuiThemeProvider>
+			
 		)
 	}
 }
