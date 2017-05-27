@@ -3,10 +3,21 @@ import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
+const IconImg = () => (
+	<img
+		className="iconImage"
+		src="https://sd.keepcalm-o-matic.co.uk/i/keep-calm-and-just-fucking-do-it-17.png"
+		alt="Keep Calm"
+	/>
+);
+
 const AppBarExampleIcon = () => (
   <AppBar
     title="Great Fucking Advice"
-    iconClassNameRight="muidocs-icon-navigation-expand-more"
+	iconElementLeft={<IconImg/>}
+	style={{
+      backgroundColor: '#000000',
+    }}
   />
 );
 
@@ -54,10 +65,10 @@ class App extends React.Component {
 									Random
 								</button>
 							</div>
-						</div>
 						<img className='image'
-							src="https://s-media-cache-ak0.pinimg.com/736x/7d/95/94/7d95944b2401deeaa6143620d6499443.jpg"
+							src="https://i.ytimg.com/vi/Alt0SKEL84M/maxresdefault.jpg"
 							alt="Just Do It" />
+							</div>
 					</div>
 					<h2 className='clicks'>
 						You have completed {this.state.clicks} clicks!
