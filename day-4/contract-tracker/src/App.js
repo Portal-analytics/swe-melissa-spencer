@@ -10,7 +10,8 @@ class PlayerInput extends Component {
     this.state = {
       title: "",
       description: "",
-      price: ""
+      price: "",
+      contract: {}
     };
 
     this.handleTitle = this.handleTitle.bind(this);
@@ -21,13 +22,14 @@ class PlayerInput extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    let contract = {
+
+    this.state.contract = {
       title: this.state.title, 
       description: this.state.description, 
       price: this.state.price,
     };
 
-		this.props.onSubmit(contract);
+		this.props.onSubmit(this.state.contract);   //error
   }
 
   handleTitle(event) {
@@ -35,9 +37,8 @@ class PlayerInput extends Component {
 
 		this.setState(function() {
 			return {
+        ...this.state,
 				title: value,
-        description: this.state.description,
-        price: this.state.price
 			}
 		});
 	}
@@ -47,9 +48,8 @@ class PlayerInput extends Component {
 
 		this.setState(function() {
 			return {
-        title: this.state.title,
-				description: value,
-        price: this.state.price
+        ...this.state,
+				description: value
 			}
 		});
 	}
@@ -59,8 +59,7 @@ class PlayerInput extends Component {
 
 		this.setState(function() {
 			return {
-        title: this.state.title,
-				description: this.state.description,
+        ...this.state,
         price: value
 			}
 		});
@@ -99,7 +98,7 @@ class PlayerInput extends Component {
 				<button
 				className='button'
 				type='submit'
-				disabled={!this.state.username}>
+				disabled={!this.state.title}>
 					Submit
 				</button>
 			</form>
@@ -111,7 +110,7 @@ class PlayerInput extends Component {
 
 class App extends Component {
   constructor(props) {
-    super(pros);
+    super(props);
 
     this.state = {
       contractList: []
@@ -119,7 +118,7 @@ class App extends Component {
   }
 
   onSubmit (contact) {
-    contractList[contractList.length] = contact;
+    this.state.contractList[this.state.contractList.length] = contact;
   }
 
   render() {
