@@ -217,7 +217,8 @@ class App extends Component {
   // update contract with parameters passed from userInput component
   // passed in to onSubmit prop when in create new contract mode
   createContract (title, description, price, index) {
-    //// create new contract ARRAY with parameters from playerInput
+    
+    // create new contract ARRAY with parameters from playerInput
     let newContract = [{
       title: title,
       description: description, 
