@@ -51,7 +51,8 @@ class Home extends React.Component {
     let newMessage = { message: this.state.inputMessage + "  " + new Date().toTimeString().slice(0, 5), user: this.state.user };
     newMessageList.unshift(newMessage);
 
-    //this.refs.newQuoteInput.clear();
+    this.refs.newMessageInput.clear();
+
     this.setState({
       ...this.state,
       message_list: newMessageList,
@@ -131,6 +132,7 @@ const styles = StyleSheet.create({
   other_message: {
     fontSize: 20,
     textAlign: 'left',
+    color: 'blue'
   },
 
   other_user: {
