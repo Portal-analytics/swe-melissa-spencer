@@ -3,7 +3,7 @@ import { StyleSheet, Text, TextInput, View, ScrollView } from 'react-native';
 import * as firebase from 'firebase';
 
 var config = {
-  apiKey: "AIzaSyDsQIjPtaajliF0g5tV4D6UD4pX82kwomc",
+  apiKey: process.env.REACT_APP_SECRET_CODE,
   authDomain: "chat-app-6d45f.firebaseapp.com",
   databaseURL: "https://chat-app-6d45f.firebaseio.com",
   projectId: "chat-app-6d45f",
