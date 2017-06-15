@@ -46,14 +46,15 @@ class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     marginTop: 25,
-    padding: 10,
+    padding: 10
   },
 
   nav: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     backgroundColor: "lightblue",
-    marginBottom: 10
+    marginBottom: 10,
+    borderRadius: 10
   },
 
   navItem: {

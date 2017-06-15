@@ -71,12 +71,12 @@ class Home extends React.Component {
         <Text style={styles.header}>
           Welcome {this.state.user}
         </Text>
-        <Text style={styles.inputLabel}>Enter Message</Text>
-        <TextInput style={{ height: 40, borderColor: 'gray', borderWidth: 1, marginBottom: 10 }}
+        <TextInput style={{ height: 40, borderColor: 'gray', borderWidth: 1, marginBottom: 10, borderRadius: 15, textAlign: "center" }}
           ref="newMessageInput"
           value={this.state.inputMessage}
           onChangeText={(text) => this._updateMessage(text)}
           onSubmitEditing={() => this._addMessage()}
+          placeholder={"new message"}
         />
         <ScrollView>
           {this.state.message_list != null &&
@@ -117,6 +117,8 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 20,
     textAlign: 'center',
+    marginBottom: 10,
+    fontWeight: "bold"
   },
 
   message: {
@@ -138,12 +140,6 @@ const styles = StyleSheet.create({
   other_user: {
     fontSize: 15,
     textAlign: 'left',
-  },
-
-  inputLabel: {
-    height: 30,
-    fontWeight: 'bold',
-    textAlign: 'center'
   }
 });
 
