@@ -18,6 +18,12 @@ class App extends React.Component {
               <Text>Home</Text>
             </Link>
             <Link
+              to="/profile"
+              underlayColor='#f0f4f7'
+              style={styles.navItem} >
+              <Text>Profile</Text>
+            </Link>
+            <Link
               to="/settings"
               underlayColor='#f0f4f7'
               style={styles.navItem}>
@@ -25,12 +31,6 @@ class App extends React.Component {
                 style={{ width: 15, height: 15 }}
                 source={{ uri: 'https://nest.com/support/images/misc-assets-icons/settings-icon.png' }}
               />
-            </Link>
-            <Link
-              to="/profile"
-              underlayColor='#f0f4f7'
-              style={styles.navItem} >
-              <Text>Profile</Text>
             </Link>
           </View>
 
@@ -51,7 +51,9 @@ const styles = StyleSheet.create({
 
   nav: {
     flexDirection: 'row',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    backgroundColor: "lightblue",
+    marginBottom: 10
   },
 
   navItem: {

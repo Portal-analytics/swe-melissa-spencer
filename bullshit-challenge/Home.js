@@ -48,7 +48,7 @@ class Home extends React.Component {
 
   _addMessage = () => {
     let newMessageList = this.state.message_list;
-    let newMessage = { message: this.state.inputMessage + "  " + new Date().toTimeString().slice(0, 5), user: this.state.user };
+    let newMessage = { message: this.state.inputMessage, date: new Date().toTimeString().slice(0, 5), user: this.state.user };
     newMessageList.unshift(newMessage);
 
     this.refs.newMessageInput.clear();
@@ -69,10 +69,10 @@ class Home extends React.Component {
     return (
       <View style={styles.home_container}>
         <Text style={styles.header}>
-          {this.state.user}
+          Welcome {this.state.user}
         </Text>
         <Text style={styles.inputLabel}>Enter Message</Text>
-        <TextInput style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+        <TextInput style={{ height: 40, borderColor: 'gray', borderWidth: 1, marginBottom: 10 }}
           ref="newMessageInput"
           value={this.state.inputMessage}
           onChangeText={(text) => this._updateMessage(text)}
@@ -88,7 +88,7 @@ class Home extends React.Component {
                       {message.message}
                     </Text>
                     <Text style={styles.user}>
-                      {message.user}
+                      {message.date}
                     </Text>
                   </View>
                 );
@@ -100,7 +100,7 @@ class Home extends React.Component {
                       {message.message}
                     </Text>
                     <Text style={styles.other_user}>
-                      {message.user}
+                      {message.user} - {message.date}
                     </Text>
                   </View>
                 );
